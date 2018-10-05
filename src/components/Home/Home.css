@@ -1,0 +1,21 @@
+.video_player {
+  height: 80vh;
+  background: lightgoldenrodyellow;
+  border: 1px dashed orange;
+}
+
+.upcoming_box {
+  height: 80vh;
+  background: green;
+  border: 1px dashed red;
+}
+
+.upcoming_left {
+  background: yellow;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+}
