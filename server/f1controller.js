@@ -2,7 +2,7 @@
 const axios = require("axios");
 
 let drivers = [];
-let updatedDrivers = [];
+let favoriteDrivers = [];
 
 // ----------- REST LOGIC HERE ------------
 const getAllDrivers = (req, res, next) => {
@@ -15,8 +15,17 @@ const getAllDrivers = (req, res, next) => {
 //postTopFive
 //get
 
-//addFavDriver
+const addFavDriver = (req, res, next) => {
+  console.log(req.body.element);
+  favoriteDrivers.push(req.body.element);
+  res.status(200).send(favoriteDrivers);
+};
 //post
+
+const displayFavDriver = (req, res, next) => {
+  console.log(favoriteDrivers);
+  res.status(200).json(favoriteDrivers);
+};
 
 //deleteDriver
 //delete
@@ -27,9 +36,10 @@ const getAllDrivers = (req, res, next) => {
 // ------------- EXPORT -------------------
 
 module.exports = {
-  getAllDrivers
+  getAllDrivers,
+  displayFavDriver,
   // postTopFive,
-  // addFavDriver,
+  addFavDriver
   // deleteDriver,
   // updateTrackInfo
 };

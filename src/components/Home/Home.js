@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="video_player">PHOTO CAROSEL OR VIDEO GOES HERE</div>
+        <div className="video_player">PHOTO CAROUSEL OR VIDEO GOES HERE</div>
         <div className="upcoming_box">
           UPCOMING RACE
           <div className="upcoming_innerbox">

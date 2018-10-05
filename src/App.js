@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Drivers from "./components/Drivers/Drivers";
+// import Drivers from "./components/Drivers/Drivers";
 import Home from "./components/Home/Home";
+import Favorites from "./components/Favorites/Favorites";
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
     if (toggle === "home") {
       return <Home />;
     } else if (toggle === "drivers") {
-      return <Drivers />;
+      return <Favorites />;
     } else if (toggle === "track") {
       // return <Track />
     }
@@ -50,7 +51,7 @@ class App extends Component {
                 Home
               </button>
               <button onClick={this.toggleDrivers} className="button">
-                Drivers
+                Favorites
               </button>
               <button onClick={this.toggleTrack} className="button">
                 Track

@@ -6,7 +6,7 @@ const app = express();
 const port = 3001;
 
 // dont forget to deconstruct
-const { getAllDrivers } = require("./f1controller");
+const { getAllDrivers, displayFavDriver,addFavDriver } = require("./f1controller");
 
 app.use(json());
 app.use(cors());
@@ -14,10 +14,13 @@ app.use(cors());
 //Initial GET request to get all 2018 drivers
 app.get("/api/drivers", getAllDrivers);
 
+
+
 //app.get(,postTopFive)
 //dont forget to deconstruct
 
-//app.post(,addFavDriver)
+app.post("/api/drivers/addfavorites",addFavDriver)
+app.get("/api/drivers/getfavorites", displayFavDriver);
 //dont forget to deconstruct
 
 //app.delete(,deleteDriver)
