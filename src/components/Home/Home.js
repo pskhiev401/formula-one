@@ -11,17 +11,16 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="video_player">PHOTO CAROUSEL OR VIDEO GOES HERE</div>
+        <div className="video_player">video_player-yellow</div>
         <div className="upcoming_box">
-          UPCOMING RACE
-          <div className="upcoming_innerbox">
+          upcoming_box-MAIN green
+          <div className="upcoming_top">upcoming_top-red</div>
+          <div className="upcoming_bottom">
             <div className="upcoming_left">
-              <Drivers />
+              upcoming_left-pink, Drivers(Child)
+              <Drivers className="upcoming_left_child" />
             </div>
-            <div className="upcoming_right">
-              <div className="upcoming_top" />
-              <div className="upcoming_bottom" />
-            </div>
+            <div className="upcoming_right">upcoming_right-track info-grey</div>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 * {
-  background: lightgray;
-  padding: 0.5px;
+  padding: 0.1px;
 }
 
 header {
@@ -17,6 +16,7 @@ header {
   background: #cf2d1e;
   border: 1px solid #cf2d1e;
   border-radius: 50px 0 0 0;
+  z-index: 1;
 }
 
 .login_div {
@@ -37,18 +37,7 @@ header {
   width: 15vw;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  align-content: stretch;
   background: #cf2d1e;
 }
-
-.right_navButtons button:nth-child() {
-}
-
-/* .video_player {
-  height: 80vh;
-  background: lightgoldenrodyellow;
-  border: 1px dashed orange;
-} */

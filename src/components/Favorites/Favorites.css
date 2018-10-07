@@ -1,0 +1,40 @@
+.main_fav_container {
+  height: 90%;
+  width: 98.5%;
+  margin: 10px;
+  background-color: lightblue;
+}
+.faves_card_box {
+  margin: 10px;
+  height: 90%;
+  width: 65%;
+  background-color: goldenrod;
+}
+
+.fav_drivers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 4vw;
+  align-items: center;
+  background: lightgrey;
+}
+
+.img_left {
+  height: 32vh;
+  width: auto;
+  background: pink;
+}
+
+.text_right {
+  font-size: 20px;
+  width: 20vw;
+}
+
+button {
+  width: 15vw;
+  border: 0.5px solid rgb(182, 180, 180);
+  border-radius: 10px;
+  color: white;
+  background: rgb(150, 50, 50);
+}

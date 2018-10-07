@@ -1,34 +1,80 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Favorites.css";
 
 class Favorites extends Component {
   constructor() {
     super();
     this.state = {
-      faves: []
+      faves: [],
+      userInput: ""
     };
+
+    // this.updateHandler = this.updateHandler.bind(this);
+    this.updateHandler = this.updateHandler.bind(this);
   }
 
   componentDidMount() {
     axios.get("/api/drivers/getfavorites").then(res => {
-      console.log("PLEASE WORK!", res);
+      // console.log(res.data);
       this.setState({ faves: res.data });
     });
   }
 
+  updateHandler(id, notes) {
+    // console.log(notes, this.state.faves, this.state.userInput);
+    axios
+      .put(`/api/drivers/updatedDrivers/${id}`, { notes })
+      .then(res => {
+        this.setState({ faves: res.data, userInput: "" });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
+    console.log(this.state.userInput);
     let displayFaves = this.state.faves.map((element, index) => {
       return (
-        <div className="fav_drivers">
-          {element.givenName} {element.familyName} {element.nationality}
-          {element.permanentNumber}
-          {element.dateOfBirth}
+        <div className="fav_drivers" key={index}>
+          <img
+            className="img_left"
+            src="https://t2.uc.ltmcdn.com/en/images/2/9/8/img_who_is_the_stig_on_top_gear_10892_600.jpg"
+            alt="404 ERROR NO IMGAGE FOUND"
+          />
+          <div className="text_right">
+            <p>Name: {element.name}</p>
+            <p>Nationality: {element.nationality}</p>
+            <p>Car Number {element.permanentNumber}</p>
+            <p>DOB: {element.dateOfBirth}</p>
+            <div>Notes: {element.notes}</div>
+            <button
+              onClick={() =>
+                this.updateHandler(element.id, this.state.userInput)
+              }
+            >
+              Update
+            </button>
+            {/* <button onclick={this.deleteHandler}>Delete</button> */}
+
+            <input
+              onChange={e => this.setState({ userInput: e.target.value })}
+              placeholder="Type Notes"
+            />
+          </div>
         </div>
       );
     });
-
-    // console.log(displayFaves);
-    return <div>{displayFaves}</div>;
+    return (
+      <div>
+        <div className="main_fav_container">
+          main_fav_container BLUE
+          <div className="faves_card_box">
+            hello
+            {displayFaves}
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 export default Favorites;

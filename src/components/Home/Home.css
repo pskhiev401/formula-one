@@ -1,21 +1,58 @@
 .video_player {
   height: 80vh;
   background: lightgoldenrodyellow;
-  border: 1px dashed orange;
+  /* border: 1px dashed orange; */
 }
 
 .upcoming_box {
-  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100vh;
   background: green;
-  border: 1px dashed red;
+  border: 2px dashed white;
+}
+
+.upcoming_top {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 20vh;
+  background: red;
+}
+
+.upcoming_bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  background: yellow;
+  height: 75vh;
+  padding: 10px;
 }
 
 .upcoming_left {
-  background: yellow;
   display: flex;
+  /* flex-wrap: wrap; */
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: stretch;
+  border: 2px dashed red;
+  background: pink;
+  height: 100%;
+  width: 30%;
+}
+
+.upcoming_left_child {
+  height: 80%;
+}
+
+.upcoming_right {
+  border: 2px dashed purple;
+  height: 100%;
+  width: 67.5%;
+  background: grey;
 }
