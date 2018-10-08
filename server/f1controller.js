@@ -18,12 +18,18 @@ const getAllDrivers = (req, res, next) => {
 //get
 
 const addFavDriver = (req, res, next) => {
-  // `${givenName} ${familyName}`
   // console.log(req.body.element);
-  const { name, givenName, familyName, nationality, permanentNumber, dateOfBirth, notes } = req.body.element;
+  const {
+    givenName,
+    familyName,
+    nationality,
+    permanentNumber,
+    dateOfBirth,
+    notes
+  } = req.body.element;
   let favorites = {
     id,
-    name:`${givenName} ${familyName}`,
+    name: `${givenName} ${familyName}`,
     nationality,
     permanentNumber,
     dateOfBirth,
@@ -33,7 +39,6 @@ const addFavDriver = (req, res, next) => {
   id++;
   res.status(200).send(favoriteDrivers);
 };
-//post
 
 //display after POST
 const displayFavDriver = (req, res, next) => {
@@ -45,7 +50,6 @@ const displayFavDriver = (req, res, next) => {
 // we needed to recreate the drivers card, and then send to the front end
 const updateDriverNotes = (req, res, next) => {
   console.log(req.params.id, req.body.notes);
-
   const { notes } = req.body;
   const editID = req.params.id;
   const editIndex = favoriteDrivers.findIndex(driver => driver.id == editID);
@@ -62,8 +66,13 @@ const updateDriverNotes = (req, res, next) => {
 };
 
 //deleteDriver
-//delete
-
+const deleteDriver = (req, res, next) => {
+  console.log(req.params.id);
+  const deleteID = req.params.id;
+  const deleteIndex = favoriteDrivers.findIndex(driver => driver.id == deleteID);
+  favoriteDrivers.splice(deleteIndex, 1);
+  return res.status(200).json(favoriteDrivers);
+};
 //updateTrackInfo
 //put
 
@@ -73,8 +82,8 @@ module.exports = {
   getAllDrivers,
   displayFavDriver,
   updateDriverNotes,
+  addFavDriver,
+  deleteDriver
   // postTopFive,
-  addFavDriver
-  // deleteDriver,
   // updateTrackInfo
 };

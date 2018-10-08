@@ -10,7 +10,8 @@ const {
   getAllDrivers,
   displayFavDriver,
   addFavDriver,
-  updateDriverNotes
+  updateDriverNotes,
+  deleteDriver
 } = require("./f1controller");
 
 app.use(json());
@@ -26,9 +27,7 @@ app.get("/api/drivers", getAllDrivers);
 app.post("/api/drivers/addfavorites", addFavDriver);
 app.get("/api/drivers/getfavorites", displayFavDriver);
 app.put("/api/drivers/updatedDrivers/:id", updateDriverNotes);
-//dont forget to deconstruct
-
-//app.delete(,deleteDriver)
+app.delete("/api/drivers/updatedDrivers/:id", deleteDriver);
 //dont forget to deconstruct
 
 //app.put(, updateTrackInfo)

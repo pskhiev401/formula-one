@@ -10,8 +10,8 @@ class Favorites extends Component {
       userInput: ""
     };
 
-    // this.updateHandler = this.updateHandler.bind(this);
     this.updateHandler = this.updateHandler.bind(this);
+    this.deleteHandler = this.deleteHandler.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +31,16 @@ class Favorites extends Component {
       .catch(err => console.log(err));
   }
 
+  deleteHandler(id) {
+    console.log(id);
+    axios
+      .delete(`/api/drivers/updatedDrivers/${id}`)
+      .then(res => {
+        this.setState({ faves: res.data });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     console.log(this.state.userInput);
     let displayFaves = this.state.faves.map((element, index) => {
@@ -42,11 +52,15 @@ class Favorites extends Component {
             alt="404 ERROR NO IMGAGE FOUND"
           />
           <div className="text_right">
-            <p>Name: {element.name}</p>
-            <p>Nationality: {element.nationality}</p>
-            <p>Car Number {element.permanentNumber}</p>
+            <p>{element.name}</p>
             <p>DOB: {element.dateOfBirth}</p>
+            <p>Nationality: {element.nationality}</p>
+            <p> Car # {element.permanentNumber}</p>
             <div>Notes: {element.notes}</div>
+            <input
+              onChange={e => this.setState({ userInput: e.target.value })}
+              placeholder="Type Notes"
+            />
             <button
               onClick={() =>
                 this.updateHandler(element.id, this.state.userInput)
@@ -54,12 +68,10 @@ class Favorites extends Component {
             >
               Update
             </button>
-            {/* <button onclick={this.deleteHandler}>Delete</button> */}
-
-            <input
-              onChange={e => this.setState({ userInput: e.target.value })}
-              placeholder="Type Notes"
-            />
+            
+            <button onClick={() => this.deleteHandler(element.id)}>
+              Delete
+            </button>
           </div>
         </div>
       );

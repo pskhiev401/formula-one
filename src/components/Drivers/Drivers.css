@@ -1,13 +1,14 @@
 .driver_div {
-  padding: 1px;
+  padding: 2.5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .add_button {
+  padding: 1px;
   border-radius: 5px;
+  width: 8vw;
   color: white;
   background: black;
 }

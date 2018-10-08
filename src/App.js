@@ -17,7 +17,7 @@ class App extends Component {
   displayToggler = () => {
     const { toggle } = this.state;
     if (toggle === "home") {
-      return <Home />;
+      return <Home toggleTrack={this.toggleTrack} />;
     } else if (toggle === "drivers") {
       return <Favorites />;
     } else if (toggle === "track") {
@@ -40,25 +40,22 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="login_div">
-          <button className="login_button">Login</button>
-        </div>
-        <header>
-          <div className="header_container">
-            <div className="logo_left">Logo</div>
-            <div className="right_navButtons">
-              <button onClick={this.toggleHome} className="button">
-                Home
-              </button>
-              <button onClick={this.toggleDrivers} className="button">
-                Favorites
-              </button>
-              <button onClick={this.toggleTrack} className="button">
-                Track
-              </button>
-            </div>
+        <div className="header_container">
+          <div className="logo_left">
+            <img src={require("./ModernF1Logo.png")} />
           </div>
-        </header>
+          <div className="right_navButtons">
+            <button onClick={this.toggleHome} className="button">
+              Home
+            </button>
+            <button onClick={this.toggleDrivers} className="button">
+              Favorites
+            </button>
+            <button onClick={this.toggleTrack} className="button">
+              Track
+            </button>
+          </div>
+        </div>
         <div className="main_content">{this.displayToggler()}</div>
       </div>
     );
