@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   height: 90vh;
-  background: #cf2d1e;
+  background: #e10500;
 }
 
 .upcoming_top {
@@ -95,7 +95,7 @@
   color: white;
 }
 .track_title h1:nth-of-type(3) {
-  color: #375fe5;
+  color: hsl(225, 49%, 55%);
 }
 
 .track_title2 {

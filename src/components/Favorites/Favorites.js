@@ -68,7 +68,7 @@ class Favorites extends Component {
             >
               Update
             </button>
-            
+
             <button onClick={() => this.deleteHandler(element.id)}>
               Delete
             </button>
@@ -79,11 +79,7 @@ class Favorites extends Component {
     return (
       <div>
         <div className="main_fav_container">
-          main_fav_container BLUE
-          <div className="faves_card_box">
-            hello
-            {displayFaves}
-          </div>
+          <div className="faves_card_box">{displayFaves}</div>
         </div>
       </div>
     );

@@ -2,11 +2,6 @@
   margin: 0;
 }
 
-header {
-  height: 12vh;
-  margin-top: 1vh;
-}
-
 .header_container {
   padding: 20px 20px 20px 30px;
   display: flex;
@@ -16,13 +11,6 @@ header {
   background: #e10500;
   border: 1px solid #cf2d1e;
   border-radius: 50px 0 0 0;
-}
-
-.login_div {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }
 
 .right_navButtons {
@@ -53,4 +41,13 @@ header {
 
 .logo_left img {
   height: 65px;
+}
+
+.footer {
+  background: lightgray;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }

@@ -1,0 +1,31 @@
+.track_container {
+  height: 80vh;
+  background: lightgray;
+  padding: 50px 20px 20px 20px;
+}
+
+.track_two_divs {
+  height: 95%;
+  /* background: green; */
+  /* border: 1px dashed orange; */
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* .track_left {
+  height: 60%;
+  width: 50%;
+  background: lightgoldenrodyellow;
+}
+
+.track_right {
+  height: 60%;
+  width: 50%;
+  background: lightcoral;
+} */

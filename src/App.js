@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Drivers from "./components/Drivers/Drivers";
 import Home from "./components/Home/Home";
 import Favorites from "./components/Favorites/Favorites";
+import Footer from "./components/Footer/Footer";
+import Logo from "./components/Logo/Logo";
+import Track from "./components/Track/Track";
 
 class App extends Component {
   constructor() {
@@ -21,7 +23,7 @@ class App extends Component {
     } else if (toggle === "drivers") {
       return <Favorites />;
     } else if (toggle === "track") {
-      // return <Track />
+      return <Track />;
     }
   };
 
@@ -42,7 +44,7 @@ class App extends Component {
       <div>
         <div className="header_container">
           <div className="logo_left">
-            <img src={require("./ModernF1Logo.png")} />
+            <Logo />
           </div>
           <div className="right_navButtons">
             <button onClick={this.toggleHome} className="button">
@@ -57,6 +59,9 @@ class App extends Component {
           </div>
         </div>
         <div className="main_content">{this.displayToggler()}</div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }
