@@ -28,7 +28,6 @@ app.post("/api/drivers/addfavorites", addFavDriver);
 app.get("/api/drivers/getfavorites", displayFavDriver);
 app.put("/api/drivers/updatedDrivers/:id", updateDriverNotes);
 app.delete("/api/drivers/updatedDrivers/:id", deleteDriver);
-//dont forget to deconstruct
 
 //app.put(, updateTrackInfo)
 //dont forget to deconstruct
